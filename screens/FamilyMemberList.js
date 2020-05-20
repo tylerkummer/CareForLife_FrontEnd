@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, Button } from "react-native";
 import { globalStyles } from "../styles/Global";
+import CustomButton from "../components/Button";
 
 export default function FamilyMemberList({ navigation }) {
   const pressHandler = () => {
@@ -12,7 +13,7 @@ export default function FamilyMemberList({ navigation }) {
       <Text style={globalStyles.titleText}>
         Family Member Screen for {navigation.getParam("name")}
       </Text>
-      <Button title="Previous Screen" onPress={pressHandler} />
+      <CustomButton title="Previous Screen" onPress={pressHandler} />
     </View>
   );
 }

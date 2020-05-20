@@ -80,7 +80,7 @@ export default function FamilyList({ navigation }) {
         }}
       />
 
-      <CustomButton text="Add Family" onPress={() => setModalOpen(true)} />
+      <CustomButton title="Add Family" onPress={() => setModalOpen(true)} />
     </View>
   );
 }

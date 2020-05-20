@@ -3,6 +3,7 @@ import { Button, TextInput, View, Text } from "react-native";
 import { globalStyles } from "../styles/Global";
 import { Formik } from "formik";
 import * as yup from "yup";
+import CustomButton from "../components/Button";
 
 const reviewSchema = yup.object({
   name: yup.string().required().min(3),
@@ -32,7 +33,7 @@ export default function ReviewForm({ addFamily }) {
               {props.touched.name && props.errors.name}
             </Text>
 
-            <Button title="submit" onPress={props.handleSubmit} />
+            <CustomButton title="submit" onPress={props.handleSubmit} />
           </View>
         )}
       </Formik>

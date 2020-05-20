@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, Button } from "react-native";
 import { globalStyles } from "../styles/Global";
+import CustomButton from "../components/Button";
 
 export default function Home({ navigation }) {
   const pressHandler = () => {
@@ -10,7 +11,7 @@ export default function Home({ navigation }) {
   return (
     <View style={globalStyles.container}>
       <Text style={globalStyles.titleText}>Home Screen</Text>
-      <Button title="Login" onPress={pressHandler} />
+      <CustomButton title="Login" onPress={pressHandler} />
     </View>
   );
 }

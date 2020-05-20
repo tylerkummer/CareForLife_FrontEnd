@@ -17,22 +17,22 @@ import AddFamilyForm from "./AddFamilyForm";
 
 export default function FamilyList({ navigation }) {
   const pressHandler = () => {
-    navigation.push("SurveyList");
+    navigation.push("FamilyMemberList");
   };
 
   const [modalOpen, setModalOpen] = useState(false);
 
   const [families, setFamilies] = useState([
     {
-      name: "Family_1",
+      name: "Family1",
       key: "1",
     },
     {
-      name: "Family_2",
+      name: "Family2",
       key: "2",
     },
     {
-      name: "Family_3",
+      name: "Family3",
       key: "3",
     },
   ]);
@@ -40,7 +40,7 @@ export default function FamilyList({ navigation }) {
   const addFamily = (family) => {
     family.key = Math.random().toString();
     setFamilies((currentFamilies) => {
-      return [family, ...currentFamilies];
+      return [...currentFamilies, family];
     });
     setModalOpen(false);
   };
@@ -48,16 +48,18 @@ export default function FamilyList({ navigation }) {
   return (
     <View style={globalStyles.container}>
       <Modal visible={modalOpen} animationType="slide">
-        <View style={styles.modalContent}>
-          <MaterialIcons
-            name="close"
-            size={24}
-            style={styles.modalClose}
-            onPress={() => setModalOpen(false)}
-          />
+        <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+          <View style={styles.modalContent}>
+            <MaterialIcons
+              name="close"
+              size={24}
+              style={styles.modalClose}
+              onPress={() => setModalOpen(false)}
+            />
 
-          <AddFamilyForm addFamily={addFamily} />
-        </View>
+            <AddFamilyForm addFamily={addFamily} />
+          </View>
+        </TouchableWithoutFeedback>
       </Modal>
 
       <Text style={globalStyles.titleText}>Family List Screen</Text>
@@ -67,7 +69,7 @@ export default function FamilyList({ navigation }) {
         renderItem={({ item }) => {
           return (
             <TouchableOpacity
-              onPress={() => navigation.push("SurveyList", item)}
+              onPress={() => navigation.push("FamilyMemberList", item)}
             >
               <Card>
                 <Text style={globalStyles.titleText}>{item.name}</Text>

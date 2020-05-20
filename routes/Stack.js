@@ -6,7 +6,7 @@ import Header from "../components/Header";
 import Home from "../screens/Home";
 import Login from "../screens/Login";
 import FamilyList from "../screens/FamilyList";
-import SurveyList from "../screens/SurveyList";
+import FamilyMemberList from "../screens/FamilyMemberList";
 
 const screens = {
   Home: {
@@ -27,10 +27,10 @@ const screens = {
       headerTitle: () => <Header title="Family List Screen" />,
     },
   },
-  SurveyList: {
-    screen: SurveyList,
+  FamilyMemberList: {
+    screen: FamilyMemberList,
     navigationOptions: {
-      headerTitle: () => <Header title="Survey List Screen" />,
+      headerTitle: () => <Header title="Family Member List Screen" />,
     },
   },
 };

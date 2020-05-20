@@ -14,6 +14,7 @@ import { globalStyles } from "../styles/Global";
 import Card from "../components/Card";
 import { MaterialIcons } from "@expo/vector-icons";
 import AddFamilyForm from "./AddFamilyForm";
+import CustomButton from "../components/Button";
 
 export default function FamilyList({ navigation }) {
   const pressHandler = () => {
@@ -79,7 +80,7 @@ export default function FamilyList({ navigation }) {
         }}
       />
 
-      <Button title="Add Family" onPress={() => setModalOpen(true)} />
+      <CustomButton text="Add Family" onPress={() => setModalOpen(true)} />
     </View>
   );
 }
